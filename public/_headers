@@ -1,0 +1,16 @@
+# Cloudflare Pages headers
+# Docs: https://developers.cloudflare.com/pages/configuration/headers/
+
+# Default headers for all published files
+/*
+  Access-Control-Allow-Origin: *
+  Access-Control-Allow-Methods: GET, HEAD, OPTIONS
+  Access-Control-Allow-Headers: Content-Type, Range
+  Access-Control-Expose-Headers: Content-Length, Content-Range, ETag
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+
+# Logos and icons: immutable cache (content changes require a new filename)
+/logos/*
+  Access-Control-Allow-Origin: *
+  Cache-Control: public, max-age=31536000, immutable

@@ -1,0 +1,65 @@
+name: Deploy CDN
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "public/**"
+      - "scripts/**"
+      - "wrangler.toml"
+      - ".github/workflows/deploy.yml"
+  pull_request:
+    paths:
+      - "public/**"
+      - "scripts/**"
+      - "wrangler.toml"
+      - ".github/workflows/deploy.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  deployments: write
+
+concurrency:
+  group: pages-production
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    name: Validate assets
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Validate public/ folder
+        run: node scripts/validate-assets.mjs
+
+  deploy:
+    name: Deploy to Cloudflare Pages
+    needs: validate
+    if: github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    environment:
+      name: production
+      url: ${{ steps.deploy.outputs.deployment-url }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Deploy
+        id: deploy
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          wranglerVersion: "4"
+          command: >-
+            pages deploy public
+            --project-name=${{ vars.CLOUDFLARE_PAGES_PROJECT || 'cdn' }}
+            --branch=main

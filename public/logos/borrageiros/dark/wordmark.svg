@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="697" height="133" viewBox="0 0 697 133">
+  <g fill="#0F0F0F" fill-rule="evenodd">
+
+    
+    <path id="letter-b" d="
+      M 0 0 H 18 V 30 H 50 V 40 H 60 V 93 H 50 V 104 H 0 Z
+      M 18 46 V 88 H 41 V 46 Z" />
+
+    
+    <path id="letter-o" d="
+      M 82 30 H 123 V 40 H 133 V 93 H 124 V 104 H 82 V 93 H 73 V 40 H 82 Z
+      M 92 46 V 88 H 114 V 46 Z" />
+
+    
+    <path id="letter-r-1" d="
+      M 146 30 H 164 V 40 H 169 V 30 H 192 V 46 H 172 V 53 H 165 V 104 H 146 Z" />
+
+    
+    <path id="letter-r-2" d="
+      M 204 30 H 222 V 40 H 226 V 30 H 249 V 46 H 229 V 52 H 223 V 104 H 204 Z" />
+
+    
+    <path id="letter-a" d="
+      M 266 30 H 308 V 40 H 317 V 104 H 266 V 94 H 256 V 69 H 266 V 60 H 298 V 47 H 266 Z
+      M 275 75 V 88 H 298 V 75 Z" />
+
+    
+    <path id="letter-g" d="
+      M 339 30 H 391 V 123 H 381 V 133 H 338 V 117 H 371 V 104 H 339 V 93 H 329 V 40 H 339 Z
+      M 349 46 V 88 H 371 V 46 Z" />
+
+    
+    <path id="letter-e" d="
+      M 414 30 H 455 V 40 H 465 V 75 H 424 V 88 H 461 V 104 H 414 V 94 H 404 V 40 H 414 Z
+      M 424 46 V 60 H 446 V 46 Z" />
+
+    
+    <path id="letter-i" d="
+      M 477 0 H 496 V 19 H 477 Z
+      M 477 30 H 496 V 104 H 477 Z" />
+
+    
+    <path id="letter-r-3" d="
+      M 509 30 H 527 V 40 H 531 V 30 H 555 V 46 H 534 V 52 H 528 V 104 H 509 Z" />
+
+    
+    <path id="letter-o-2" d="
+      M 575 30 H 616 V 40 H 626 V 93 H 616 V 104 H 574 V 93 H 565 V 40 H 575 Z
+      M 584 46 V 88 H 606 V 46 Z" />
+
+    
+    <path id="letter-s" d="
+      M 648 30 H 694 V 46 H 657 V 59 H 687 V 70 H 697 V 93 H 687 V 104 H 640 V 88 H 677 V 75 H 648 V 64 H 638 V 40 H 648 Z" />
+
+  </g>
+</svg>

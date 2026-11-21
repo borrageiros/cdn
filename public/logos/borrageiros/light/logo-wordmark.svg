@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="930" height="670" viewBox="0 0 930 670">
+
+  
+  <g id="icon-bg" transform="translate(-303, -162)">
+    
+    <path id="frame" fill="#7289da" fill-rule="evenodd" d="
+      M 459 162 H 1077 V 180 H 1095 V 194 H 1108 V 581 H 1090 V 594 H 1074 V 609 H 461 V 594 H 445 V 581 H 428 V 194 H 442 V 180 H 459 Z
+      M 474 189 V 207 H 455 V 560 H 474 V 583 H 1061 V 561 H 1080 V 207 H 1061 V 189 Z" />
+
+    
+    <path id="icon-letter-b" fill="#7289da" fill-rule="evenodd" d="
+      M 534 283 H 561 V 345 H 575 V 334 H 630 V 348 H 651 V 430 H 630 V 446 H 575 V 433 H 561 V 446 H 534 Z
+      M 576 349 V 366 H 561 V 409 H 576 V 430 H 623 V 349 Z" />
+
+    
+    <path id="icon-letter-g" fill="#7289da" fill-rule="evenodd" d="
+      M 699 334 H 751 V 345 H 766 V 334 H 793 V 474 H 778 V 487 H 695 V 468 H 766 V 434 H 751 V 446 H 700 V 430 H 681 V 348 H 699 Z
+      M 708 349 V 430 H 751 V 409 H 766 V 367 H 751 V 349 Z" />
+
+    
+    <path id="greater-than" fill="#ffffff" d="
+      M 826 334 H 854 V 347 H 868 V 360 H 882 V 374 H 896 V 399 H 882 V 413 H 868 V 426 H 854 V 439 H 826 V 418 H 840 V 405 H 854 V 393 H 868 V 380 H 854 V 368 H 840 V 355 H 826 Z" />
+
+    
+    <path id="underscore" fill="#ffffff" d="
+      M 892 437 H 1003 V 465 H 892 Z" />
+  </g>
+
+  
+  <g id="title-borrageiros" fill="#FEFEFE" fill-rule="evenodd" transform="translate(0, 502) scale(1.2285)">
+
+    
+    <path id="letter-b" d="
+      M 0 0 H 18 V 30 H 50 V 40 H 60 V 93 H 50 V 104 H 0 Z
+      M 18 46 V 88 H 41 V 46 Z" />
+
+    
+    <path id="letter-o" transform="translate(6, 0)" d="
+      M 82 30 H 123 V 40 H 133 V 93 H 124 V 104 H 82 V 93 H 73 V 40 H 82 Z
+      M 92 46 V 88 H 114 V 46 Z" />
+
+    
+    <path id="letter-r-1" transform="translate(12, 0)" d="
+      M 146 30 H 164 V 40 H 169 V 30 H 192 V 46 H 172 V 53 H 165 V 104 H 146 Z" />
+
+    
+    <path id="letter-r-2" transform="translate(18, 0)" d="
+      M 204 30 H 222 V 40 H 226 V 30 H 249 V 46 H 229 V 52 H 223 V 104 H 204 Z" />
+
+    
+    <path id="letter-a" transform="translate(24, 0)" d="
+      M 266 30 H 308 V 40 H 317 V 104 H 266 V 94 H 256 V 69 H 266 V 60 H 298 V 47 H 266 Z
+      M 275 75 V 88 H 298 V 75 Z" />
+
+    
+    <path id="letter-g" transform="translate(30, 0)" d="
+      M 339 30 H 391 V 123 H 381 V 133 H 338 V 117 H 371 V 104 H 339 V 93 H 329 V 40 H 339 Z
+      M 349 46 V 88 H 371 V 46 Z" />
+
+    
+    <path id="letter-e" transform="translate(36, 0)" d="
+      M 414 30 H 455 V 40 H 465 V 75 H 424 V 88 H 461 V 104 H 414 V 94 H 404 V 40 H 414 Z
+      M 424 46 V 60 H 446 V 46 Z" />
+
+    
+    <path id="letter-i" transform="translate(42, 0)" d="
+      M 477 0 H 496 V 19 H 477 Z
+      M 477 30 H 496 V 104 H 477 Z" />
+
+    
+    <path id="letter-r-3" transform="translate(48, 0)" d="
+      M 509 30 H 527 V 40 H 531 V 30 H 555 V 46 H 534 V 52 H 528 V 104 H 509 Z" />
+
+    
+    <path id="letter-o-2" transform="translate(54, 0)" d="
+      M 575 30 H 616 V 40 H 626 V 93 H 616 V 104 H 574 V 93 H 565 V 40 H 575 Z
+      M 584 46 V 88 H 606 V 46 Z" />
+
+    
+    <path id="letter-s" transform="translate(60, 0)" d="
+      M 648 30 H 694 V 46 H 657 V 59 H 687 V 70 H 697 V 93 H 687 V 104 H 640 V 88 H 677 V 75 H 648 V 64 H 638 V 40 H 648 Z" />
+
+  </g>
+</svg>
