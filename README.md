@@ -21,7 +21,7 @@ update.bat                  # Local helper script to stage, commit, and push upd
 
 1. Push to `main` (affecting `public/**`, `scripts/**`, `wrangler.toml`, or the workflow).
 2. **Validate assets** job: Validates file names (kebab-case), extensions, file size limits, and the presence of `_headers`.
-3. **Deploy to Cloudflare Pages** job: Runs `cloudflare/wrangler-action` executing `wrangler pages deploy public --branch=main`.
+3. **Deploy to Cloudflare Pages** job: Runs `cloudflare/wrangler-action` executing `wrangler pages deploy --project-name=<project> --branch=main`. The folder comes from `pages_build_output_dir` in `wrangler.toml`.
 4. Pull Requests trigger only the validation step without deploying.
 
 ## Adding New Assets
@@ -72,8 +72,10 @@ gh variable set CLOUDFLARE_PAGES_PROJECT --body "cdn"
 
 ```bash
 npx wrangler@4 login
-npx wrangler@4 pages deploy public --project-name=cdn --branch=main
+npx wrangler@4 pages deploy --project-name=cdn --branch=main
 ```
+
+Do not also pass `public` as a positional argument: Wrangler rejects a directory argument combined with `pages_build_output_dir` in `wrangler.toml`.
 
 ## Verification
 
@@ -94,6 +96,7 @@ Expected response headers:
 | Issue | Likely Cause |
 |---|---|
 | `Project not found` in Actions | The Pages project does not exist yet in Cloudflare or `CLOUDFLARE_PAGES_PROJECT` does not match. |
+| Exit code 1 right after `Running Wrangler Commands` | Usually a directory argument passed alongside `pages_build_output_dir`, or a missing project. Check the full Wrangler stderr in the job log. |
 | `Authentication error` | The API Token lacks `Cloudflare Pages: Edit` permission or the Account ID is incorrect. |
 | Changes not reflecting immediately | Assets are cached as `immutable`; deploy under a new filename to bypass cache. |
 | Missing CORS headers | `public/_headers` is missing from the deploy root or was rejected. |
