@@ -14,3 +14,42 @@
 /logos/*
   Access-Control-Allow-Origin: *
   Cache-Control: public, max-age=31536000, immutable
+
+# Generated directory listings must never inherit the immutable cache.
+# Directory request URLs (what browsers send for folder links):
+/logos/*/
+  ! Cache-Control
+  Cache-Control: public, max-age=0, must-revalidate
+  X-Robots-Tag: noindex
+
+/logos/
+  ! Cache-Control
+  Cache-Control: public, max-age=0, must-revalidate
+  X-Robots-Tag: noindex
+
+# Same listings when requested by their explicit index file:
+/logos/*/index.html
+  ! Cache-Control
+  Cache-Control: public, max-age=0, must-revalidate
+  X-Robots-Tag: noindex
+
+/logos/index.html
+  ! Cache-Control
+  Cache-Control: public, max-age=0, must-revalidate
+  X-Robots-Tag: noindex
+
+# Vendored PrettyIndex UI (hashed filenames)
+/_ui/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Generated root listing and error page
+/
+  Cache-Control: public, max-age=0, must-revalidate
+  X-Robots-Tag: noindex
+
+/index.html
+  Cache-Control: public, max-age=0, must-revalidate
+  X-Robots-Tag: noindex
+
+/404.html
+  X-Robots-Tag: noindex

@@ -3,3 +3,8 @@ node_modules/
 .DS_Store
 Thumbs.db
 *.log
+
+# Generated at deploy time (never committed)
+public/**/index.html
+public/_ui/
+public/404.html

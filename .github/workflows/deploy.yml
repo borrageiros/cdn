@@ -24,6 +24,10 @@ concurrency:
   group: pages-production
   cancel-in-progress: true
 
+env:
+  # Pin a commit or tag here for reproducible builds (e.g. @v1.0.0).
+  PRETTYINDEX_BASE_URL: https://cdn.jsdelivr.net/gh/borrageiros/PrettyIndex@latest/dist
+
 jobs:
   validate:
     name: Validate assets
@@ -40,6 +44,9 @@ jobs:
       - name: Validate public/ folder
         run: node scripts/validate-assets.mjs
 
+      - name: Generate directory listings
+        run: node scripts/generate-browse.mjs
+
   deploy:
     name: Deploy to Cloudflare Pages
     needs: validate
@@ -51,6 +58,13 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
 
       - name: Check configuration
         env:
@@ -65,10 +79,13 @@ jobs:
             fi
           done
           if [ -z "${{ vars.CLOUDFLARE_PAGES_PROJECT }}" ]; then
-            echo "::warning::CLOUDFLARE_PAGES_PROJECT not defined; defaulting to 'cdn'"
+            echo "::warning::CLOUDFLARE_PAGES_PROJECT not defined; defaulting to 'cdn-borrageiros-com'"
           fi
           echo "Pages project: ${{ vars.CLOUDFLARE_PAGES_PROJECT || 'cdn-borrageiros-com' }}"
           exit $missing
+
+      - name: Generate directory listings
+        run: node scripts/generate-browse.mjs
 
       - name: Deploy
         id: deploy
@@ -77,4 +94,4 @@ jobs:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           wranglerVersion: "4"
-          command: pages deploy public --project-name=${{ vars.CLOUDFLARE_PAGES_PROJECT || 'cdn-borrageiros-com' }} --branch=main
+          command: pages deploy --project-name=${{ vars.CLOUDFLARE_PAGES_PROJECT || 'cdn-borrageiros-com' }} --branch=main

@@ -1,6 +1,6 @@
 # Cloudflare Pages project (Direct Upload).
 # The name must match the actual project name in Cloudflare.
 # In CI it is overridden by the CLOUDFLARE_PAGES_PROJECT variable.
-name = "cdn"
+name = "cdn-borrageiros-com"
 compatibility_date = "2025-01-01"
 pages_build_output_dir = "public"

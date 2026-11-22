@@ -14,7 +14,8 @@ const ROOT = fileURLToPath(new URL("../", import.meta.url));
 const PUBLIC_DIR = join(ROOT, "public");
 
 const ALLOWED_EXTENSIONS = new Set([".svg", ".png", ".webp", ".avif", ".jpg", ".jpeg", ".ico"]);
-const RESERVED_FILES = new Set(["_headers", "_redirects", "_routes.json", "404.html"]);
+const RESERVED_FILES = new Set(["_headers", "_redirects", "_routes.json", "404.html", "index.html"]);
+const EXCLUDED_DIRS = new Set(["_ui"]);
 const MAX_FILE_SIZE = 5 * 1024 * 1024; // 5 MB
 const WARN_FILE_SIZE = 1024 * 1024; // 1 MB
 
@@ -40,7 +41,7 @@ async function walk(dir) {
     const fullPath = join(dir, entry.name);
 
     if (entry.isDirectory()) {
-      if (entry.name.startsWith(".")) continue;
+      if (entry.name.startsWith(".") || EXCLUDED_DIRS.has(entry.name)) continue;
       if (!NAME_PATTERN.test(entry.name)) {
         errors.push(`Invalid directory name: ${relative(ROOT, fullPath)}`);
       }
